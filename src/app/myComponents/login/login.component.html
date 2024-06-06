@@ -1,0 +1,92 @@
+<section class="py-5">
+  <div
+    class="container"
+    style="
+      background-color: rgb(0, 0, 17, 0.7);
+      display: flex;
+      margin: auto;
+      width: 60%;
+      height: 75vh;
+      align-items: center;
+      box-shadow: 0 0 5px 3px;
+      border-radius: 10px;
+      color: rgb(236, 235, 235);
+    "
+  >
+    <div style="width: 50%">
+      <img
+        src="https://webocity.in/wp-content/uploads/2019/03/e-commerce-website-ecommerce-png-450_450.png"
+        alt=""
+        style="width: 100%"
+      />
+    </div>
+    <div style="width: 50%; padding: 0 25px; margin: 0">
+      <h1>Ecommerce</h1>
+      <p style="font-size: 20px">Sign in to your account</p>
+      <form>
+        <div class="form-group my-4">
+          <!-- <input
+            type="text"
+            [(ngModel)]="email"
+            [ngModelOptions]="{ standalone: true }"
+            class="form-control"
+            id="email"
+            placeholder="Email address"
+          /> -->
+          <input
+            type="text"
+            [formControl]="email"
+            class="form-control"
+            id="email"
+            placeholder="Email address"
+          />
+          <div *ngIf="email.errors?.['required'] && email.touched">
+            <p class="text-danger">Please enter a valid email address!</p>
+          </div>
+          <div *ngIf="email.errors?.['pattern'] && email.touched">
+            <p class="text-danger">Please enter a valid email address!</p>
+          </div>
+        </div>
+        <div class="form-group my-4">
+          <!-- <input
+            type="password"
+            [(ngModel)]="pass"
+            [ngModelOptions]="{ standalone: true }"
+            class="form-control"
+            id="pass"
+            placeholder="Password"
+          /> -->
+          <input
+            type="password"
+            [formControl]="pass"
+            class="form-control"
+            id="pass"
+            placeholder="Password"
+          />
+          <div *ngIf="pass.errors?.['required'] && pass.touched">
+            <p class="text-danger">Please enter Password!</p>
+          </div>
+          <div *ngIf="pass.errors?.['pattern'] && pass.touched">
+            <p class="text-danger">Please enter a valid password!</p>
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="btn my-2 w-100"
+          style="background-color: black"
+          (click)="Authenticate()"
+        >
+          Login
+        </button>
+        <p class="forgpas"><a (click)="forgpas()">Forgot Password?</a></p>
+        <p>
+          Don't have an account?<a
+            routerLink="/signup"
+            style="margin: 6px; text-decoration: none"
+            >Register Now</a
+          >
+        </p>
+      </form>
+    </div>
+  </div>
+</section>

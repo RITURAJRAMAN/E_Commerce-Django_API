@@ -1,0 +1,106 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark pc">
+  <a class="navbar-brand" routerLink="">Ecommerce</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="" routerLinkActive="active">Home</a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" routerLink="category" routerLinkActive="active"
+          >Categories</a
+        >
+      </li> -->
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link"
+          id="navbarDropdown"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Categories
+        </a>
+        <div
+          class="dropdown-menu dropdown-menu-right"
+          style="top: 100%; left: 0"
+          aria-labelledby="navbarDropdown"
+        >
+          <a class="dropdown-item pointer" routerLink="/category/men">Mens</a>
+          <a class="dropdown-item pointer" routerLink="/category/women"
+            >Womens</a
+          >
+          <a class="dropdown-item pointer" routerLink="/category/Kids">Kids</a>
+          <a class="dropdown-item pointer" routerLink="/category/smartphones"
+            >Smart Phones</a
+          >
+          <a class="dropdown-item pointer" routerLink="/category/electronics"
+            >Electronics</a
+          >
+          <a class="dropdown-item pointer" routerLink="/category/homeequipments"
+            >Home Appliances</a
+          >
+          <!-- <a class="dropdown-item pointer" routerLink="/category/others"
+            >Others</a
+          > -->
+        </div>
+      </li>
+    </ul>
+    <ul class="navbar-nav mr-auto right">
+      <li class="nav-item">
+        <a
+          class="nav-link carticon"
+          routerLink="cart"
+          routerLinkActive="active"
+        >
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span *ngIf="loginstat" class="cart-size">{{ cartSize }}</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="order" routerLinkActive="active"
+          >My Orders</a
+        >
+      </li>
+      <li class="nav-item flex">
+        <button class="nav-link" *ngIf="loginstat" (click)="logout()">
+          Logout
+        </button>
+        <a
+          class="nav-link"
+          *ngIf="!loginstat"
+          routerLink="login"
+          routerLinkActive="active"
+          >Login</a
+        >
+        <a
+          class="nav-link"
+          *ngIf="!loginstat"
+          routerLink="signup"
+          routerLinkActive="active"
+          >Sign Up</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          *ngIf="loginstat"
+          routerLink="profile"
+          routerLinkActive="active"
+          >Profile</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>

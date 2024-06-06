@@ -1,0 +1,197 @@
+<body>
+<!-- Hero Section -->
+<div
+  class="hero-section p-5"
+  style="
+      background-image: url('https://cdn-bijap.nitrocdn.com/AuMaQmessFRMSicXmZsEecJFLEquAyoT/assets/images/optimized/rev-82247c6/www.the-future-of-commerce.com/wp-content/uploads/2020/01/thumbnail-d771a7f4e38fcf7614f297ea6c90f497-1200x370.jpeg');
+      background-position: center;
+      background-size: 100% 100%;
+      height: 270px;
+    "
+>
+  <h1 style="color: white">Welcome to Our E-commerce Store!</h1>
+  <p style="color: white">Find the best products at the best prices.</p>
+  <a class="btn btn-primary" href="#home">Shop Now</a>
+</div>
+
+<!-- Search Bar and Product Display -->
+<main>
+  <div style="display: flex">
+    <input
+      [(ngModel)]="searchTerm"
+      class="form-control mx-5 my-2"
+      id="search"
+      name="search"
+      placeholder="Search Product"
+      type="text"
+    />
+    <button
+      (click)="searchProduct()"
+      class="btn btn-outline-success mx-5 my-2"
+      type="submit"
+    >
+      Search
+    </button>
+  </div>
+
+  <div *ngIf="ifresult && !showsearch" class="row m-auto py-3" id="home">
+    <h2>Men's Special</h2>
+    <div *ngFor="let i of mensArray | slice : 0 : 6" class="col-sm-2">
+      <div class="card my-3" style="width: 12rem">
+        <img
+          alt="Card image cap"
+          class="card-img-top"
+          src="{{ i.imageurl }}"
+          style="height: 14rem"
+        />
+        <div class="card-body m-auto" style="height: 12rem">
+          <h5 class="card-title text-center">{{ i.product }}</h5>
+          <p class="card-text text-center">Price: &#8377;{{ i.price }}</p>
+          <p class="card-text text-center">{{ i.description }}</p>
+        </div>
+        <div class="card-body" style="margin: auto">
+          <button
+            *ngIf="i.addedtocart"
+            class="bg-info border-0 rounded py-1"
+            routerLink="/cart"
+          >
+            Go 2 Cart
+          </button>
+          <button
+            (click)="addtocart(i)"
+            *ngIf="!i.addedtocart"
+            class="bg-warning border-0 rounded py-1"
+          >
+            Add 2 Cart
+          </button>
+          <span>&nbsp;&nbsp;</span>
+          <button
+            (click)="buyed(i)"
+            class="bg-success border-0 rounded px-3 py-1"
+          >
+            Buy
+          </button>
+        </div>
+      </div>
+    </div>
+    <h2>Women's Special</h2>
+    <div *ngFor="let i of womensArray | slice : 0 : 6" class="col-sm-2">
+      <div class="card my-3" style="width: 12rem">
+        <img
+          alt="Card image cap"
+          class="card-img-top"
+          src="{{ i.imageurl }}"
+          style="height: 14rem"
+        />
+        <div class="card-body m-auto" style="height: 12rem">
+          <h5 class="card-title text-center">{{ i.product }}</h5>
+          <p class="card-text text-center">Price: &#8377;{{ i.price }}</p>
+          <p class="card-text text-center">{{ i.description }}</p>
+        </div>
+        <div class="card-body" style="margin: auto">
+          <button
+            *ngIf="i.addedtocart"
+            class="bg-info border-0 rounded py-1"
+            routerLink="/cart"
+          >
+            Go 2 Cart
+          </button>
+          <button
+            (click)="addtocart(i)"
+            *ngIf="!i.addedtocart"
+            class="bg-warning border-0 rounded py-1"
+          >
+            Add 2 Cart
+          </button>
+          <span>&nbsp;&nbsp;</span>
+          <button
+            (click)="buyed(i)"
+            class="bg-success border-0 rounded px-3 py-1"
+          >
+            Buy
+          </button>
+        </div>
+      </div>
+    </div>
+    <h2>Kids's Special</h2>
+    <div *ngFor="let i of kidsArray | slice : 0 : 6" class="col-sm-2">
+      <div class="card my-3" style="width: 12rem">
+        <img
+          alt="Card image cap"
+          class="card-img-top"
+          src="{{ i.imageurl }}"
+          style="height: 14rem"
+        />
+        <div class="card-body m-auto" style="height: 12rem">
+          <h5 class="card-title text-center">{{ i.product }}</h5>
+          <p class="card-text text-center">Price: &#8377;{{ i.price }}</p>
+          <p class="card-text text-center">{{ i.description }}</p>
+        </div>
+        <div class="card-body" style="margin: auto">
+          <button
+            *ngIf="i.addedtocart"
+            class="bg-info border-0 rounded py-1"
+            routerLink="/cart"
+          >
+            Go 2 Cart
+          </button>
+          <button
+            (click)="addtocart(i)"
+            *ngIf="!i.addedtocart"
+            class="bg-warning border-0 rounded py-1"
+          >
+            Add 2 Cart
+          </button>
+          <span>&nbsp;&nbsp;</span>
+          <button
+            (click)="buyed(i)"
+            class="bg-success border-0 rounded px-3 py-1"
+          >
+            Buy
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="showsearch" class="row m-auto py-3" id="home">
+    <div *ngFor="let i of filteredArray" class="col-sm-2">
+      <div class="card my-3" style="width: 12rem">
+        <img
+          alt="Card image cap"
+          class="card-img-top"
+          src="{{ i.imageurl }}"
+          style="height: 14rem"
+        />
+        <div class="card-body m-auto" style="height: 12rem">
+          <h5 class="card-title text-center">{{ i.product }}</h5>
+          <p class="card-text text-center">Price: &#8377;{{ i.price }}</p>
+          <p class="card-text text-center">{{ i.description }}</p>
+        </div>
+        <div class="card-body" style="margin: auto">
+          <button
+            *ngIf="i.addedtocart"
+            class="bg-info border-0 rounded py-1"
+            routerLink="/cart"
+          >
+            Go 2 Cart
+          </button>
+          <button
+            (click)="addtocart(i)"
+            *ngIf="!i.addedtocart"
+            class="bg-warning border-0 rounded py-1"
+          >
+            Add 2 Cart
+          </button>
+          <span>&nbsp;&nbsp;</span>
+          <button
+            (click)="buyed(i)"
+            class="bg-success border-0 rounded px-3 py-1"
+          >
+            Buy
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+</body>

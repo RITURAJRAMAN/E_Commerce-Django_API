@@ -1,0 +1,95 @@
+<section class="py-3">
+  <h1 class="text-center mb-4">Add a new Product</h1>
+  <div
+    class="container p-4 text-white rounded shadow"
+    style="background-color: rgb(0, 0, 17, 0.7)"
+  >
+    <form>
+      <div class="row mb-3">
+        <div class="col">
+          <label for="product" class="form-label">Product Name</label>
+          <input
+            type="text"
+            [(ngModel)]="product"
+            [ngModelOptions]="{ standalone: true }"
+            class="form-control"
+            id="product"
+            placeholder="Enter Product Name"
+          />
+        </div>
+        <div class="col">
+          <label for="quantity" class="form-label">Quantity</label>
+          <input
+            type="number"
+            [(ngModel)]="quantity"
+            [ngModelOptions]="{ standalone: true }"
+            class="form-control"
+            id="quantity"
+            placeholder="Enter Quantity"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <label for="price" class="form-label">Price</label>
+          <input
+            type="number"
+            [(ngModel)]="price"
+            [ngModelOptions]="{ standalone: true }"
+            class="form-control"
+            id="price"
+            placeholder="Enter Price"
+          />
+        </div>
+        <div class="col">
+          <label for="category" class="form-label">Select Category</label>
+          <select
+            name="category"
+            id="category"
+            [(ngModel)]="category"
+            class="form-select"
+            style="width: 100%; padding: 7px; border-radius: 7px"
+          >
+            <option disabled selected>Select Category</option>
+            <option value="men">Men</option>
+            <option value="women">Women</option>
+            <option value="Kids">Kids</option>
+            <option value="smartphones">Smart Phones</option>
+            <option value="electronics">Electronics</option>
+            <option value="homeequipments">Home Equipments</option>
+            <option value="others">Others</option>
+          </select>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <label for="imageurl" class="form-label">Image</label>
+          <input
+            type="text"
+            [(ngModel)]="imageurl"
+            [ngModelOptions]="{ standalone: true }"
+            class="form-control"
+            id="imageurl"
+            placeholder="Enter URL"
+          />
+        </div>
+        <div class="col">
+          <label for="description" class="form-label">Description</label>
+          <textarea
+            [(ngModel)]="description"
+            [ngModelOptions]="{ standalone: true }"
+            class="form-control"
+            id="description"
+            rows="1"
+            placeholder="Enter Description"
+          ></textarea>
+        </div>
+      </div>
+      <div class="d-grid gap-2 pt-3">
+        <button type="button" class="btn btn-primary" (click)="addproduct()">
+          Add this Product
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

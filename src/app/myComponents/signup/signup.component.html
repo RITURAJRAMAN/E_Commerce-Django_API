@@ -1,0 +1,209 @@
+<section class="py-5">
+  <div
+    class="container"
+    style="
+      background-color: rgb(0, 0, 17, 0.7);
+      display: flex;
+      margin: auto;
+      width: 60%;
+      height: 80vh;
+      align-items: center;
+      box-shadow: 0 0 5px 3px;
+      border-radius: 10px;
+      color: rgb(236, 235, 235);
+    "
+  >
+    <div style="width: 50%">
+      <img
+        src="https://webocity.in/wp-content/uploads/2019/03/e-commerce-website-ecommerce-png-450_450.png"
+        alt=""
+        style="width: 100%"
+      />
+    </div>
+    <div style="width: 50%; padding: 0 25px; margin: 0">
+      <h1>Ecommerce</h1>
+      <p style="font-size: 20px">Register Now</p>
+      <!-- <form>
+        <div class="form-group my-3">
+          <input
+            type="text"
+            [formControl]="username"
+            class="form-control"
+            id="name"
+            placeholder="Name"
+            required
+          />
+          <div *ngIf="username.errors?.['required'] && username.touched">
+            <p>Please enter your name.</p>
+          </div>
+        </div>
+        <div class="form-group my-3">
+          <input
+            type="text"
+            [formControl]="email"
+            class="form-control"
+            id="email"
+            placeholder="Email address"
+          />
+          <div *ngIf="email.errors?.['required'] && email.touched">
+            <p>Please enter your email address.</p>
+          </div>
+          <div *ngIf="email.errors?.['pattern'] && email.touched">
+            <p>Please enter a valid email address!</p>
+          </div>
+        </div>
+        <div class="form-group my-3">
+          <input
+            type="text"
+            [formControl]="phone"
+            class="form-control"
+            id="phone"
+            placeholder="Phone Number"
+            required
+          />
+          <div *ngIf="phone.errors?.['required'] && phone.touched">
+            <p>Please enter your phone number.</p>
+          </div>
+        </div>
+        <div class="form-group my-3">
+          <input
+            type="number"
+            [formControl]="age"
+            class="form-control"
+            id="age"
+            placeholder="Age"
+            required
+          />
+          <div *ngIf="age.errors?.['required'] && age.touched">
+            <p>Please enter your age.</p>
+          </div>
+        </div>
+        <div class="form-group my-3" style="width: 100%">
+          <select
+            name="role"
+            id="role"
+            [(ngModel)]="role"
+            style="width: 100%; padding: 7px; border-radius: 7px"
+          >
+            <option value="" disabled selected>Select a Role</option>
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+          </select>
+        </div>
+
+        <div class="form-group my-3">
+          <input
+            type="password"
+            [formControl]="password"
+            class="form-control"
+            id="password"
+            placeholder="Password"
+            required
+          />
+          <div *ngIf="password.errors?.['required'] && password.touched">
+            <p>Please enter your Password.</p>
+          </div>
+          <div *ngIf="password.errors?.['pattern'] && password.touched">
+            <p>Please enter a valid Password!</p>
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="btn my-2 w-100"
+          style="background-color: black"
+          (click)="adduser()"
+        >
+          Sign Up
+        </button>
+        <p>
+          Already having an account?<a
+            routerLink="/login"
+            style="margin: 6px; text-decoration: none"
+            >Login Now</a
+          >
+        </p>
+      </form> -->
+      <form>
+        <div class="form-group my-3">
+          <input
+            type="text"
+            [formControl]="name"
+            class="form-control"
+            id="name"
+            placeholder="Name"
+            required
+          />
+          <div *ngIf="name.errors?.['required'] && name.touched">
+            <p>Please enter your name.</p>
+          </div>
+        </div>
+        <div class="form-group my-3">
+          <input
+            type="text"
+            [formControl]="email"
+            class="form-control"
+            id="email"
+            placeholder="Email address"
+          />
+          <div *ngIf="email.errors?.['required'] && email.touched">
+            <p>Please enter your email address.</p>
+          </div>
+          <div *ngIf="email.errors?.['pattern'] && email.touched">
+            <p>Please enter a valid email address!</p>
+          </div>
+        </div>
+        <div class="form-group my-3">
+          <input
+            type="password"
+            [formControl]="password"
+            class="form-control"
+            id="password"
+            placeholder="Password"
+            required
+          />
+          <div *ngIf="password.errors?.['required'] && password.touched">
+            <p>Please enter your Password.</p>
+          </div>
+          <div *ngIf="password.errors?.['pattern'] && password.touched">
+            <p>Please enter a valid Password!</p>
+          </div>
+        </div>
+        <div class="form-group my-3">
+          <input
+            type="password"
+            [formControl]="password2"
+            class="form-control"
+            id="password2"
+            placeholder="Re-enter Password"
+            required
+          />
+          <div *ngIf="password2.errors?.['required'] && password2.touched">
+            <p>Please enter your Password.</p>
+          </div>
+          <div *ngIf="password2.errors?.['pattern'] && password2.touched">
+            <p>Please enter a valid Password!</p>
+          </div>
+        </div>
+        <div>
+          <input type="checkbox" id="tc" required />
+          I accept Terms and Conditions
+        </div>
+        <button
+          type="submit"
+          class="btn my-2 w-100"
+          style="background-color: black"
+          (click)="adduser()"
+        >
+          Sign Up
+        </button>
+        <p>
+          Already having an account?<a
+            routerLink="/login"
+            style="margin: 6px; text-decoration: none"
+            >Login Now</a
+          >
+        </p>
+      </form>
+    </div>
+  </div>
+</section>

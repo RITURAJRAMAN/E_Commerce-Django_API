@@ -1,0 +1,16 @@
+.buttondesign button{
+    border-radius: 8px;
+    margin: 0 3px;
+    border: none;
+    background: rgb(190, 190, 190);
+}
+
+@media (min-width: 1025px) {
+    .h-custom {
+    height: 100vh !important;
+    }
+    }
+
+.alink a{
+    cursor: pointer;
+}

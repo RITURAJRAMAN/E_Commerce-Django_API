@@ -1,0 +1,42 @@
+<main>
+  <div class="row m-auto py-3" id="home">
+    <div class="col-sm-2" *ngFor="let i of catdata">
+      <div class="card my-3" style="width: 12rem">
+        <img
+          class="card-img-top"
+          src="{{ i.imageurl }}"
+          alt="Card image cap"
+          style="height: 14rem"
+        />
+        <div class="card-body m-auto" style="height: 12rem">
+          <h5 class="card-title text-center">{{ i.product }}</h5>
+          <p class="card-text text-center">Price: &#8377;{{ i.price }}</p>
+          <p class="card-text text-center">{{ i.description }}</p>
+        </div>
+        <div class="card-body" style="margin: auto">
+          <button
+            *ngIf="i.addedtocart"
+            class="bg-info border-0 rounded py-1"
+            routerLink="/cart"
+          >
+            Go 2 Cart
+          </button>
+          <button
+            *ngIf="!i.addedtocart"
+            class="bg-warning border-0 rounded py-1"
+            (click)="addtocart(i)"
+          >
+            Add 2 Cart
+          </button>
+          <span>&nbsp;&nbsp;</span>
+          <button
+            class="bg-success border-0 rounded px-3 py-1"
+            (click)="buyed(i)"
+          >
+            Buy
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
